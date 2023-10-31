@@ -1,5 +1,6 @@
+import Heading from "@/components/Heading";
 import { Posts, Products } from "@/types/interfaces";
-import { Quote } from "lucide-react";
+ 
 import Image from "next/image";
 
 interface postsProps extends Posts {}
@@ -17,7 +18,10 @@ export default async function Products() {
   const data = await getDate();
   const products = data.products;
   return (
-    <div className=" capitalize mt-24 max-w-[62rem] mx-auto grid grid-cols-1 indent-2 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6 px-4 ">
+   <div className="mt-24">
+         <Heading title="All Products" isCentered={true} />
+
+     <div className="  capitalize  max-w-[62rem] mx-auto grid grid-cols-1 indent-2 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6 px-4 ">
       <Image
         src="/bg2.png"
         width={1920}
@@ -25,6 +29,7 @@ export default async function Products() {
         alt="second banner"
         className=" fixed bg-repeat-y -z-50 w-[1400px] h-[670px] top-0 left-0 opacity-5"
       />
+     
       {products.map((item: Products) => (
         <div
           className="bg-slate-800 hover:bg-slate-950 transition-all   p-4 shadow-2xl  border-cyan-700  py-2 my-2 text-center rounded-xl"
@@ -50,7 +55,7 @@ export default async function Products() {
                  
               </h4>
               <small className="text-sky-600 font-semibold">
-              {item.brand}
+              Brand : {item.brand}
               </small>
               <small className="text-sky-600 font-semibold">
               price : {item.price}$
@@ -65,6 +70,7 @@ export default async function Products() {
         </div>
       ))}
     </div>
+   </div>
   );
 }
 
