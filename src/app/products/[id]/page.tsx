@@ -1,6 +1,6 @@
 import Heading from "@/components/Heading";
 import { Posts, Products } from "@/types/interfaces";
-import { ShoppingCart, Star } from "lucide-react";
+import { DollarSign, ShoppingCart, Star } from "lucide-react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -51,23 +51,23 @@ export default async function Product({ params: { id } }: idParams) {
           <div className="basis-6/12 flex flex-col  md:text-center lg:text-start gap-4 md:gap-6">
             <Heading title={item.title} />
 
-            <p className="lg:max-w-[40rem]">{item.description}</p>
+            <p className="lg:max-w-[40rem] text-justify mx-4">{item.description}</p>
             <div className=" relative">
-              <div className="flex flex-wrap">
-                <p className=" border-r-2  border-slate-600 px-4 my-2">
+              <div className="flex flex-wrap cursor-pointer capitalize">
+                <p className=" flex  hover:text-yellow-400  w-fit bg-slate-700 rounded-lg shadow-2xl  m-2 p-2">
                   {" "}
-                  price : {item.price}
+                  price : {item.price} <DollarSign/>
                 </p>
-                <p className=" border-r-2  border-slate-600 px-4 my-2">
+                <p className="  hover:text-yellow-400   w-fit bg-slate-700 rounded-lg shadow-2xl  m-2 p-2">
                   {" "}
                   rating : {item.rating}
                 </p>
-                <div className="flex items-center relative  px-4 my-2 border-r-2 border-slate-600">
+                <div className="flex items-center relative hover:text-yellow-400  w-fit bg-slate-700 rounded-lg shadow-2xl  m-2 p-2">
                   In Stock{" "}
-                  <p className=" absolute -top-4 right-0">{item.stock} </p>{" "}
+                  <p className=" absolute -top-2 right-0">{item.stock} </p>{" "}
                   <ShoppingCart />
                 </div>
-                <div className="flex  px-4 my-2 ">
+                <div className="flex  px-4 my-2 w-fit bg-slate-700 rounded-lg shadow-2xl  m-2 p-2 hover:text-yellow-400  ">
                   <Star fill="#717F93" />
                   <Star fill="#717F93" />
                   <Star fill="#717F93" />
@@ -80,7 +80,7 @@ export default async function Product({ params: { id } }: idParams) {
         </article>
         <section
           id="client"
-          className=" items-center justify-center  max-w-[62rem] mx-auto grid grid-cols md:grid-cols-3  lg:grid-cols-4  gap-4"
+          className=" items-center justify-center  max-w-[62rem] mx-auto grid grid-cols-1 md:grid-cols-3  lg:grid-cols-4  gap-4"
         >
           {item.images.map((image, index) => (
             <div key={index} className="relative">

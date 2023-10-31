@@ -28,7 +28,7 @@ export default async function Products() {
     <div className="mt-24">
       <Heading title="All Products" isCentered={true} />
 
-      <div className="  capitalize  max-w-[62rem] mx-auto grid grid-cols-1 indent-2 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6 px-4 ">
+      <div className="  capitalize  max-w-[62rem] mx-auto grid grid-cols-1 indent-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-6 px-4 ">
         <Image
           src="/bg2.png"
           width={1920}
@@ -69,7 +69,7 @@ export default async function Products() {
                 </h6>
                 
               </div>
-            <p className="text-lg text-center md:text-start">
+            <p className="  text-justify  indent-0 ">
               {item.description}
             </p>
           </Link>

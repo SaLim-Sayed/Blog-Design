@@ -32,11 +32,11 @@ export default async function page() {
             className="hover:bg-slate-950   bg-slate-800    p-4 shadow-2xl  border-cyan-700  py-2 my-2 text-center rounded-xl"
             key={item.id}
           >
-            <div className="flex  gap-x-4 border-sky-600/20 font-extrabold tracking-wide border-b-2 min-h-[7rem]">
+            <div className="flex  gap-x-4 border-sky-600/20 font-extrabold tracking-wide border-b-2  ">
               <Quote className="flex items-start min-w-[3rem] min-h-[3rem] text-sky-600" />
-              <h1 className="flex text-start text-sky-600 "> {item.title}</h1>
+              <h1 className="flex text-start text-sky-600 "> {item.title.slice(0,18)}</h1>
             </div>
-            <p className=" flex   text-lg  md:text-start">{item.body}</p>
+            <p className=" flex   text-lg   text-justify">{item.body}</p>
           </div>
         ))}
       </div>
