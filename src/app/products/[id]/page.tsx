@@ -54,35 +54,33 @@ export default async function Product({ params: { id } }: idParams) {
             <p className="lg:max-w-[40rem]">{item.description}</p>
             <div className=" relative">
               <div className="flex flex-wrap">
-              <p className=" border-r-2  border-slate-600 px-4 my-2">
-                {" "}
-                price : {item.price}
-              </p>
-              <p className=" border-r-2  border-slate-600 px-4 my-2">
-                {" "}
-                rating : {item.rating}
-              </p>
-              <div className="flex items-center relative  px-4 my-2 border-r-2 border-slate-600">
-                In Stock{" "}
-                <p className=" absolute -top-4 right-0">{item.stock} </p>{" "}
-                <ShoppingCart />
+                <p className=" border-r-2  border-slate-600 px-4 my-2">
+                  {" "}
+                  price : {item.price}
+                </p>
+                <p className=" border-r-2  border-slate-600 px-4 my-2">
+                  {" "}
+                  rating : {item.rating}
+                </p>
+                <div className="flex items-center relative  px-4 my-2 border-r-2 border-slate-600">
+                  In Stock{" "}
+                  <p className=" absolute -top-4 right-0">{item.stock} </p>{" "}
+                  <ShoppingCart />
+                </div>
+                <div className="flex  px-4 my-2 ">
+                  <Star fill="#717F93" />
+                  <Star fill="#717F93" />
+                  <Star fill="#717F93" />
+                  <Star />
+                  <Star />
+                </div>
               </div>
-              <div className="flex  px-4 my-2 ">
-              <Star fill="#717F93" />
-              <Star fill="#717F93" />
-              <Star fill="#717F93" />
-              <Star />
-              <Star />
-              
             </div>
-              </div>
-            </div>
-           
           </div>
         </article>
         <section
           id="client"
-          className=" items-center justify-center  max-w-[62rem] mx-auto grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4  gap-4"
+          className=" items-center justify-center  max-w-[62rem] mx-auto grid grid-cols md:grid-cols-3  lg:grid-cols-4  gap-4"
         >
           {item.images.map((image, index) => (
             <div key={index} className="relative">
