@@ -2,6 +2,7 @@ import Heading from "@/components/Heading";
 import { Posts, Products } from "@/types/interfaces";
  
 import Image from "next/image";
+import Link from "next/link";
 
 interface postsProps extends Posts {}
 
@@ -31,7 +32,7 @@ export default async function Products() {
       />
      
       {products.map((item: Products) => (
-        <div
+        <Link href={`/products/${item.id}`}
           className="bg-slate-800 hover:bg-slate-950 transition-all   p-4 shadow-2xl  border-cyan-700  py-2 my-2 text-center rounded-xl"
           key={item.id}
         >
@@ -67,7 +68,7 @@ export default async function Products() {
               
               {item.description}
             </p>
-        </div>
+        </Link>
       ))}
     </div>
    </div>
